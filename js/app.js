@@ -87,11 +87,12 @@ function resumeGame() {
   mutateAndSave();
   if (previousFocus?.isConnected) focusSafely(previousFocus);
 }
-function openRules() {
-  pauseFromRules = true;
-  $("#pause-overlay").hidden = true;
+function openRules(fromSetup = false) {
+  pauseFromRules = !fromSetup;
+  if (!fromSetup) $("#pause-overlay").hidden = true;
   $("#rules-overlay").hidden = false;
   $("#rules-scroll").scrollTop = 0;
+  $("#rules-resume").textContent = fromSetup ? "トップページに戻る" : "一時停止画面に戻る";
   focusSafely($("#rules-title"));
 }
 function closeRules() {
@@ -99,7 +100,10 @@ function closeRules() {
   if (pauseFromRules) {
     $("#pause-overlay").hidden = false;
     focusSafely($("#resume-button"));
+  } else {
+    focusSafely($("#setup-rules-open"));
   }
+  pauseFromRules = false;
 }
 function showTurnConfirmation() {
   if (!state) return;
@@ -339,7 +343,8 @@ $("#quit-confirm").addEventListener("click", () => {
 });
 
 $("#pause-close").addEventListener("click",resumeGame);
-$("#rules-open").addEventListener("click",openRules);
+$("#rules-open").addEventListener("click",()=>openRules(false));
+$("#setup-rules-open").addEventListener("click",()=>openRules(true));
 $("#rules-close").addEventListener("click",closeRules);
 $("#rules-resume").addEventListener("click",closeRules);
 $("#history-open").addEventListener("click",()=>{renderHistory($("#history-list"), promptMap);showScreen("history");});
