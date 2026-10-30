@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="description" content="エンジニア用語をカタカナなしで説明して当てるチーム対抗ゲーム">
+  <title>カタカナ禁止！エンジニア用語あてゲーム</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/setup.css">
+  <link rel="stylesheet" href="./css/game.css">
+  <link rel="stylesheet" href="./css/results.css">
+  <link rel="stylesheet" href="./css/history.css">
+</head>
+
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="13" rx="2"></rect>
+          <path d="M8 21h8M12 17v4M2 21h20"></path>
+        </svg>
+      </div>
+      <div>
+        <p class="eyebrow">TEAM PARTY GAME</p>
+        <h1>カタカナ禁止！<span>エンジニア用語あてゲーム</span></h1>
+      </div>
+      <button id="history-open" class="button button-quiet header-history" type="button">履歴</button>
+    </header>
+
+    <div id="save-banner" class="save-banner" role="status" aria-live="polite" hidden>
+      <span id="save-message">保存できていません。</span>
+      <button id="save-retry" class="button button-small" type="button">再保存</button>
+    </div>
+
+    <section id="setup-screen" class="screen setup-screen">
+      <div class="intro-panel">
+        <p class="eyebrow">NO KATAKANA CHALLENGE</p>
+        <h2>その言葉、カタカナなしで<br class="mobile-break">伝えられる？</h2>
+        <p>エンジニアがよく使う用語を、外来語・英語・略語を使わずに説明！チームで協力して正解を目指そう。</p>
+      </div>
+      <form id="setup-form" class="panel setup-panel">
+        <div class="section-heading"><span class="section-number">01</span>
+          <h3>ゲーム設定</h3>
+        </div>
+        <div class="field-grid">
+          <label class="field"><span>チーム数</span>
+            <select id="team-count">
+              <option value="2">2チーム</option>
+              <option value="3">3チーム</option>
+              <option value="4">4チーム</option>
+            </select>
+          </label>
+          <label class="field"><span>ゲームの巡数</span>
+            <select id="round-count">
+              <option value="1">1巡</option>
+              <option value="2">2巡</option>
+              <option value="3" selected>3巡</option>
+              <option value="4">4巡</option>
+              <option value="5">5巡</option>
+            </select>
+          </label>
+          <label class="field"><span>1ターンの制限時間</span>
+            <select id="turn-duration">
+              <option value="30">30秒</option>
+              <option value="60" selected>60秒</option>
+              <option value="90">90秒</option>
+            </select>
+          </label>
+        </div>
+        <div class="section-heading team-heading"><span class="section-number">02</span>
+          <h3>チーム名</h3>
+        </div>
+        <div id="team-fields" class="team-fields"></div>
+        <div class="setup-note"><span class="info-dot">i</span>
+          <p>各ターンはチーム交代制です。説明する人は自分のチーム内で相談して決められます。次に遊ぶチームが判定を担当します。</p>
+        </div>
+        <button class="button button-primary button-large full-width" type="submit">ゲームを開始する <span
+            aria-hidden="true">→</span></button>
+        <button id="resume-game" class="button button-secondary full-width" type="button" hidden>保存したゲームを再開する</button>
+      </form>
+      <p class="footnote">全 <span id="prompt-count">0</span> 問のお題を収録。お題はゲーム中に重複しません。</p>
+    </section>
+
+    <section id="game-screen" class="screen game-screen" hidden>
+      <div class="game-topline">
+        <div>
+          <p class="eyebrow" id="round-label">ROUND 1 / 3</p>
+          <h2 id="active-team">チームAのターン</h2>
+        </div>
+        <div class="scoreboard" id="scoreboard" aria-label="現在の得点"></div>
+      </div>
+      <div class="turn-meta">
+        <span id="judge-team" class="judge-chip">判定：チームB</span>
+        <span id="prompt-progress">今回 1 問目</span>
+      </div>
+      <article class="prompt-card">
+        <div class="prompt-card-top"><span class="eyebrow">YOUR WORD</span><span id="category-chip"
+            class="category-chip">開発</span></div>
+        <p class="prompt-term" id="prompt-term">読み込み中</p>
+        <p class="prompt-hint" id="prompt-hint">この言葉を、カタカナ・英語・略語を使わずに説明しよう！</p>
+      </article>
+      <div class="game-controls">
+        <div class="timer-block"><span class="eyebrow">REMAINING</span><strong
+            id="timer-value">60</strong><span>秒</span></div>
+        <button id="pause-button" class="button pause-button" type="button"><span aria-hidden="true">Ⅱ</span>
+          一時停止</button>
+      </div>
+      <div class="judge-actions" id="judge-actions">
+        <button id="correct-button" class="judge-button correct" type="button"><span
+            class="keycap">←</span><strong>正解</strong><small>1点獲得</small></button>
+        <button id="skip-button" class="judge-button skip" type="button"><span
+            class="keycap">→</span><strong>スキップ</strong><small>何度でも可</small></button>
+        <button id="violation-button" class="judge-button violation" type="button"><span
+            class="keycap">↓</span><strong>違反</strong><small>このお題は失格</small></button>
+      </div>
+      <div id="final-turn-confirmation" class="final-turn-confirmation" hidden>
+        <p>最後のお題の判定が終わりました。</p>
+        <button id="confirm-next-turn" class="button button-primary button-large full-width"
+          type="button">判定を確定して次のチームへ進む</button>
+      </div>
+      <div class="keyboard-help" id="keyboard-help">
+        <p>PC操作：← 正解　/　→ スキップ　/　↓ 違反　/　↑ 一時停止</p>
+        <div class="key-diagram" aria-label="矢印キーの操作図">
+          <span></span><kbd>↑<small>停止</small></kbd><span></span>
+          <kbd>←<small>正解</small></kbd><kbd>↓<small>違反</small></kbd><kbd>→<small>次へ</small></kbd>
+        </div>
+      </div>
+      <p class="turn-footnote">違反の最終判断は、判定チームの代表者が行います。判定チーム内で相談してください。</p>
+    </section>
+
+    <section id="results-screen" class="screen results-screen" hidden>
+      <div class="results-hero">
+        <p class="eyebrow">GAME COMPLETE</p>
+        <h2>おつかれさま！</h2>
+        <p>みんなの挑戦結果はこちら。</p>
+      </div>
+      <div id="final-ranking" class="ranking-list"></div>
+      <div class="results-summary" id="results-summary"></div>
+      <section class="result-details-section">
+        <h3>今回の問題と解説</h3>
+        <p class="result-details-intro">各問題を開くと、用語の意味・説明を確認できます。</p>
+        <div id="result-question-details" class="question-detail-list"></div>
+      </section>
+      <div class="results-actions">
+        <button id="download-json" class="button button-secondary" type="button">記録をJSONで保存</button>
+        <button id="new-game" class="button button-primary" type="button">新しいゲーム</button>
+      </div>
+      <p class="footnote">保存に問題がある場合でも結果画面は表示できます。未保存の記録がある場合は、新しいゲームを始める前に確認します。</p>
+    </section>
+
+    <section id="history-screen" class="screen history-screen" hidden>
+      <div class="screen-heading-row">
+        <div>
+          <p class="eyebrow">PAST GAMES</p>
+          <h2>ゲーム履歴</h2>
+        </div><button id="history-close" class="button button-quiet" type="button">戻る</button>
+      </div>
+      <div id="history-list" class="history-list"></div>
+      <button id="history-export" class="button button-secondary full-width" type="button">履歴をJSONで保存</button>
+    </section>
+  </main>
+
+  <div id="pause-overlay" class="overlay" hidden>
+    <section class="modal pause-modal" role="dialog" aria-modal="true" aria-labelledby="pause-title">
+      <button id="pause-close" class="modal-close" type="button" aria-label="閉じる">×</button>
+      <p class="eyebrow">GAME PAUSED</p>
+      <h2 id="pause-title" tabindex="-1">ゲームを一時停止中</h2>
+      <p id="pause-reason" class="pause-reason">一時停止しました。</p>
+      <div class="pause-summary" id="pause-summary"></div>
+      <div class="pause-actions">
+        <button id="rules-open" class="button button-secondary full-width" type="button">ゲームのルール</button>
+        <button id="resume-button" class="button button-primary button-large full-width" type="button">ゲームを再開する</button>
+        <button id="quit-game" class="button button-secondary full-width" type="button">ゲームをやめてトップへ戻る</button>
+      </div>
+    </section>
+  </div>
+
+  <div id="quit-overlay" class="overlay" hidden>
+    <section class="modal confirm-modal" role="dialog" aria-modal="true" aria-labelledby="quit-title">
+      <p class="eyebrow">QUIT GAME</p>
+      <h2 id="quit-title">ゲームを終了しますか？</h2>
+      <p>進行中の得点と判定記録は破棄されます。完了済みゲームの履歴は残ります。</p>
+      <div class="confirm-actions">
+        <button id="quit-cancel" class="button button-secondary" type="button">ゲームに戻る</button>
+        <button id="quit-confirm" class="button button-primary" type="button">終了してトップへ</button>
+      </div>
+    </section>
+  </div>
+
+  <div id="rules-overlay" class="overlay rules-overlay" hidden>
+    <section class="modal rules-modal" role="dialog" aria-modal="true" aria-labelledby="rules-title">
+      <button id="rules-close" class="modal-close" type="button" aria-label="閉じる">×</button>
+      <div class="rules-scroll" id="rules-scroll">
+        <p class="eyebrow">HOW TO PLAY</p>
+        <h2 id="rules-title" tabindex="-1">ゲームのルール</h2>
+        <div class="rules-section">
+          <h3><span>01</span>ゲームの目的</h3>
+          <p>出題者は、画面に表示された開発用語を、カタカナ語・英語・略語を使わずに説明します。判定チームは、説明を聞いてお題を当てます。</p>
+        </div>
+        <div class="rules-section">
+          <h3><span>02</span>チームと順番</h3>
+          <ul>
+            <li>チームが交代しながら、制限時間内にできるだけ多くのお題に挑戦します。</li>
+            <li>説明する人は、そのターンのチーム内で自由に選べます。複数人で説明しても構いません。</li>
+            <li>判定は次に遊ぶチームが担当します。違反の最終判断は判定チームの代表者が行います。</li>
+          </ul>
+        </div>
+        <div class="rules-section">
+          <h3><span>03</span>判定方法</h3>
+          <ul>
+            <li><strong>正解：</strong>お題を当てたら、出題チームに1点。次のお題へ進みます。</li>
+            <li><strong>スキップ：</strong>分からない場合は次のお題へ進めます。回数制限・減点はありません。</li>
+            <li><strong>違反：</strong>外来語・英語・略語を使った場合、そのお題は失格で0点です。減点はありません。</li>
+          </ul>
+        </div>
+        <div class="rules-section">
+          <h3><span>04</span>禁止事項</h3>
+          <ul>
+            <li>カタカナ語などの外来語を使わない。</li>
+            <li>英語を使わない。</li>
+            <li>英語の頭文字などの略語を使わない。</li>
+          </ul>
+          <div class="notice-box">
+            <div class="notice-title"><span aria-hidden="true">ⓘ</span>注意事項</div>
+            <p>禁止表現に該当するか迷った場合は、判定チーム内で相談し、代表者が最終判断します。人名・固有名詞などの扱いも、開始前に全員で確認してください。</p>
+          </div>
+        </div>
+        <div class="rules-section">
+          <h3><span>05</span>時間と終了</h3>
+          <p>各チームの1ターンは設定された時間で進行します。設定した巡数が終わるとゲーム終了です。正解数に応じて順位を決定し、同点の場合は同率順位とします。</p>
+        </div>
+        <div class="rules-section">
+          <h3><span>06</span>操作方法</h3>
+          <ul>
+            <li>正解・スキップ・違反の判定は、説明者側の操作担当が行います。</li>
+            <li>PCでは矢印キーでも操作できます。左：正解、右：スキップ、下：違反、上：一時停止。</li>
+            <li>一時停止中はお題を隠し、再開ボタンで残り時間から再開します。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="rules-footer"><button id="rules-resume" class="button button-primary full-width"
+          type="button">一時停止画面に戻る</button></div>
+    </section>
+  </div>
+
+  <div id="confirm-overlay" class="overlay" hidden>
+    <section class="modal confirm-modal" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
+      <p class="eyebrow">UNSAVED DATA</p>
+      <h2 id="confirm-title">未保存のデータがあります</h2>
+      <p id="confirm-message">保存されていない記録が失われる可能性があります。</p>
+      <div class="confirm-actions"><button id="confirm-cancel" class="button button-secondary"
+          type="button">戻る</button><button id="confirm-continue" class="button button-danger"
+          type="button">続行する</button></div>
+    </section>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./js/app.js"></script>
+</body>
+
+</html>

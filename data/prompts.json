@@ -1,0 +1,1055 @@
+{
+  "schemaVersion": 1,
+  "prompts": [
+    {
+      "id": "DEV001",
+      "term": "API",
+      "description": "異なる仕組み同士が情報をやり取りするための窓口",
+      "category": "連携・通信",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV002",
+      "term": "Git",
+      "description": "プログラムの変更履歴を記録し、過去の状態に戻せる仕組み",
+      "category": "開発管理",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV003",
+      "term": "GitHub",
+      "description": "プログラムの保管や共同作業を支援するウェブサービス",
+      "category": "開発管理",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV004",
+      "term": "ブランチ",
+      "description": "本流に影響を与えず、別の作業の流れを作る仕組み",
+      "category": "開発管理",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV005",
+      "term": "マージ",
+      "description": "別々に進めた変更内容を一つにまとめること",
+      "category": "開発管理",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV006",
+      "term": "コミット",
+      "description": "変更内容を記録として確定する操作",
+      "category": "開発管理",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV007",
+      "term": "プルリクエスト",
+      "description": "変更内容を確認してもらい、本流へ取り込む提案",
+      "category": "開発管理",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "DEV008",
+      "term": "レビュー",
+      "description": "作成したプログラムや設計内容を他の人が確認すること",
+      "category": "開発管理",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV009",
+      "term": "デプロイ",
+      "description": "作った仕組みを利用できる環境へ配置すること",
+      "category": "公開・運用",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV010",
+      "term": "リリース",
+      "description": "新しい機能や製品を利用者に提供し始めること",
+      "category": "公開・運用",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV011",
+      "term": "サーバー",
+      "description": "他の端末からの要求を受け、情報や機能を提供するコンピューター",
+      "category": "基盤",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV012",
+      "term": "クライアント",
+      "description": "サーバーへ要求を送り、機能や情報を利用する側",
+      "category": "基盤",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV013",
+      "term": "データベース",
+      "description": "情報を整理して保存し、必要なときに取り出す仕組み",
+      "category": "データ",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV014",
+      "term": "テーブル",
+      "description": "データベース内で、同じ種類の情報を行と列で管理するもの",
+      "category": "データ",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV015",
+      "term": "SQL",
+      "description": "データベースに情報を登録・検索・変更するための言語",
+      "category": "データ",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV016",
+      "term": "クエリ",
+      "description": "データの取得や変更などを依頼する命令文",
+      "category": "データ",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV017",
+      "term": "トランザクション",
+      "description": "一連の処理をひとまとまりとして扱う仕組み",
+      "category": "データ",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "DEV018",
+      "term": "インデックス",
+      "description": "検索を速くするため、データの場所を探しやすくする仕組み",
+      "category": "データ",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "DEV019",
+      "term": "キャッシュ",
+      "description": "よく使う情報を一時的に保存し、次回の処理を速くする仕組み",
+      "category": "基盤",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV020",
+      "term": "バックアップ",
+      "description": "故障や誤操作に備えて、情報の複製を別に保管すること",
+      "category": "運用",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV021",
+      "term": "ログ",
+      "description": "処理や操作がいつ何をしたかを記録したもの",
+      "category": "運用",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV022",
+      "term": "バッチ",
+      "description": "決められた処理をまとめて実行する方式",
+      "category": "開発",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV023",
+      "term": "cron",
+      "description": "決められた時刻や間隔で処理を自動実行する仕組み",
+      "category": "運用",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV024",
+      "term": "APIキー",
+      "description": "外部の仕組みを利用する際、利用者や権限を確認するための秘密の文字列",
+      "category": "連携・通信",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV025",
+      "term": "トークン",
+      "description": "利用者の認証や情報の受け渡しに使う識別情報",
+      "category": "認証",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV026",
+      "term": "セッション",
+      "description": "利用者が操作を続けている間の状態を管理する仕組み",
+      "category": "認証",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV027",
+      "term": "Cookie",
+      "description": "ウェブサイトが利用者の端末に保存する小さな情報",
+      "category": "ウェブ",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV028",
+      "term": "ブラウザ",
+      "description": "ウェブページを表示して操作するためのソフトウェア",
+      "category": "ウェブ",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV029",
+      "term": "フロントエンド",
+      "description": "利用者が直接見たり操作したりする画面側の部分",
+      "category": "ウェブ",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV030",
+      "term": "バックエンド",
+      "description": "画面の裏側でデータ処理や判断を行う部分",
+      "category": "ウェブ",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV031",
+      "term": "フレームワーク",
+      "description": "よく使う機能や設計の型をまとめ、開発を助ける土台",
+      "category": "開発",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "DEV032",
+      "term": "ライブラリ",
+      "description": "特定の処理を簡単に使えるようまとめた部品集",
+      "category": "開発",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV033",
+      "term": "パッケージ",
+      "description": "関連するプログラムや部品をひとまとめにしたもの",
+      "category": "開発",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV034",
+      "term": "依存関係",
+      "description": "あるプログラムが別の部品や仕組みを必要とする関係",
+      "category": "開発",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV035",
+      "term": "バージョン",
+      "description": "ソフトウェアやデータの改訂段階を示す番号や記号",
+      "category": "開発",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV036",
+      "term": "バグ",
+      "description": "プログラムに含まれる誤りや不具合",
+      "category": "品質",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV037",
+      "term": "デバッグ",
+      "description": "不具合の原因を調べて修正する作業",
+      "category": "品質",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV038",
+      "term": "テスト",
+      "description": "想定どおりに動くか、問題がないかを確かめること",
+      "category": "品質",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV039",
+      "term": "単体テスト",
+      "description": "小さな部品や一つの機能ごとに動作を確かめる試験",
+      "category": "品質",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV040",
+      "term": "結合テスト",
+      "description": "複数の部品をつないだ状態で正しく動くか確かめる試験",
+      "category": "品質",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV041",
+      "term": "回帰テスト",
+      "description": "修正によって以前動いていた機能が壊れていないか確かめる試験",
+      "category": "品質",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "DEV042",
+      "term": "エラー",
+      "description": "処理が正常に進まない状態や、その原因を示す情報",
+      "category": "品質",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV043",
+      "term": "例外処理",
+      "description": "予期しない事態が起きたときに、適切に対応する仕組み",
+      "category": "品質",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "DEV044",
+      "term": "バリデーション",
+      "description": "入力された値が条件や形式に合っているか確認すること",
+      "category": "品質",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "DEV045",
+      "term": "認証",
+      "description": "利用者が誰なのかを確認すること",
+      "category": "認証",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV046",
+      "term": "認可",
+      "description": "利用者が特定の操作をしてよいか判断すること",
+      "category": "認証",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "DEV047",
+      "term": "暗号化",
+      "description": "第三者に読まれないよう、情報を別の形に変換すること",
+      "category": "安全",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV048",
+      "term": "脆弱性",
+      "description": "攻撃や不正利用につながる、仕組み上の弱点",
+      "category": "安全",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "DEV049",
+      "term": "ファイアウォール",
+      "description": "通信を監視し、許可したものだけを通す仕組み",
+      "category": "安全",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "DEV050",
+      "term": "ドメイン",
+      "description": "ウェブサイトなどの場所を示す、人が読みやすい名前",
+      "category": "基盤",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV051",
+      "term": "DNS",
+      "description": "名前から接続先の住所情報を調べる仕組み",
+      "category": "基盤",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV052",
+      "term": "IPアドレス",
+      "description": "ネットワーク上の機器を識別する番号",
+      "category": "基盤",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV053",
+      "term": "ポート",
+      "description": "同じ機器の中で、通信先のサービスを区別する番号",
+      "category": "基盤",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV054",
+      "term": "プロトコル",
+      "description": "機器同士が通信するときに従う約束事",
+      "category": "基盤",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV055",
+      "term": "HTTP",
+      "description": "ウェブ上で情報をやり取りするための通信規約",
+      "category": "ウェブ",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV056",
+      "term": "HTTPS",
+      "description": "通信内容を暗号化してウェブ情報をやり取りする方式",
+      "category": "ウェブ",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV057",
+      "term": "JSON",
+      "description": "情報を決まった書式で表すためのデータ形式",
+      "category": "データ",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV058",
+      "term": "CSV",
+      "description": "表形式の情報を区切り文字で表すファイル形式",
+      "category": "データ",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV059",
+      "term": "環境変数",
+      "description": "実行環境ごとに異なる設定値を外から渡す仕組み",
+      "category": "運用",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV060",
+      "term": "コンテナ",
+      "description": "アプリケーションと実行に必要なものをまとめて動かす仕組み",
+      "category": "基盤",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "DEV061",
+      "term": "Docker",
+      "description": "コンテナを作成・実行・管理するための仕組み",
+      "category": "基盤",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV062",
+      "term": "イメージ",
+      "description": "コンテナを作る元になる、実行環境のひな型",
+      "category": "基盤",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "DEV063",
+      "term": "CI",
+      "description": "変更をきっかけに、確認や試験を自動で実行する考え方",
+      "category": "自動化",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "DEV064",
+      "term": "CD",
+      "description": "確認済みの変更を、利用環境へ自動で届ける考え方",
+      "category": "自動化",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "DEV065",
+      "term": "パイプライン",
+      "description": "複数の処理を決められた順番でつなげた流れ",
+      "category": "自動化",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "DEV066",
+      "term": "マイグレーション",
+      "description": "データベースの構造変更を履歴に沿って適用する仕組み",
+      "category": "データ",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "DEV067",
+      "term": "シード",
+      "description": "開発や試験で使う初期データを登録する処理",
+      "category": "データ",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "DEV068",
+      "term": "ORM",
+      "description": "プログラム上の物とデータベースの記録を対応づける仕組み",
+      "category": "データ",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "DEV069",
+      "term": "エンドポイント",
+      "description": "通信や処理を受け付ける接続先の場所",
+      "category": "連携・通信",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "DEV070",
+      "term": "ペイロード",
+      "description": "通信や処理で実際に受け渡すデータ本体",
+      "category": "連携・通信",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "DEV071",
+      "term": "レート制限",
+      "description": "短時間に利用できる回数や量を制限する仕組み",
+      "category": "安全",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "DEV072",
+      "term": "タイムアウト",
+      "description": "一定時間内に処理が終わらない場合に打ち切る仕組み",
+      "category": "品質",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "DEV073",
+      "term": "非同期処理",
+      "description": "処理の完了を待たず、別の作業を進められる方式",
+      "category": "開発",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "DEV074",
+      "term": "キュー",
+      "description": "後で処理する仕事を順番に並べて待たせる仕組み",
+      "category": "開発",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "DEV075",
+      "term": "イベント",
+      "description": "特定の出来事が起きたことを知らせる仕組み",
+      "category": "開発",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "DEV076",
+      "term": "ウェブフック",
+      "description": "出来事が起きたとき、別の仕組みへ自動で知らせる仕組み",
+      "category": "連携・通信",
+      "difficulty": "intermediate"
+    },
+    {
+      "term": "HTML",
+      "description": "ウェブページの見出しや文章、画像などの構造を記述するための言語",
+      "category": "ウェブ",
+      "difficulty": "beginner",
+      "id": "DEV077"
+    },
+    {
+      "term": "CSS",
+      "description": "文字の色や大きさ、配置など見た目を整えるための仕組み",
+      "category": "ウェブ",
+      "difficulty": "beginner",
+      "id": "DEV078"
+    },
+    {
+      "term": "JavaScript",
+      "description": "ウェブページに動きや操作への反応を加えるプログラミング言語",
+      "category": "開発",
+      "difficulty": "beginner",
+      "id": "DEV079"
+    },
+    {
+      "term": "PHP",
+      "description": "ウェブサービスの裏側の処理によく使われるプログラミング言語",
+      "category": "開発",
+      "difficulty": "beginner",
+      "id": "DEV080"
+    },
+    {
+      "term": "Python",
+      "description": "自動化やデータ分析、ウェブ開発などに使われるプログラミング言語",
+      "category": "開発",
+      "difficulty": "beginner",
+      "id": "DEV081"
+    },
+    {
+      "term": "変数",
+      "description": "値や情報を一時的に入れておくための名前付きの入れ物",
+      "category": "開発",
+      "difficulty": "beginner",
+      "id": "DEV082"
+    },
+    {
+      "term": "定数",
+      "description": "一度決めた値を、原則として途中で変えずに使うための名前",
+      "category": "開発",
+      "difficulty": "beginner",
+      "id": "DEV083"
+    },
+    {
+      "term": "関数",
+      "description": "よく使う処理をひとまとめにして、名前を付けたもの",
+      "category": "開発",
+      "difficulty": "beginner",
+      "id": "DEV084"
+    },
+    {
+      "term": "引数",
+      "description": "処理を呼び出すときに、外から渡す値",
+      "category": "開発",
+      "difficulty": "beginner",
+      "id": "DEV085"
+    },
+    {
+      "term": "戻り値",
+      "description": "処理を実行した結果として、呼び出し元へ返す値",
+      "category": "開発",
+      "difficulty": "beginner",
+      "id": "DEV086"
+    },
+    {
+      "term": "配列",
+      "description": "複数の値を順番に並べてまとめて扱う入れ物",
+      "category": "開発",
+      "difficulty": "beginner",
+      "id": "DEV087"
+    },
+    {
+      "term": "条件分岐",
+      "description": "条件によって実行する処理を切り替えること",
+      "category": "開発",
+      "difficulty": "beginner",
+      "id": "DEV088"
+    },
+    {
+      "term": "繰り返し処理",
+      "description": "同じ処理を条件や回数に応じて何度も実行すること",
+      "category": "開発",
+      "difficulty": "beginner",
+      "id": "DEV089"
+    },
+    {
+      "term": "コメント",
+      "description": "プログラムの動作には影響せず、人が読むために書く説明",
+      "category": "開発",
+      "difficulty": "beginner",
+      "id": "DEV090"
+    },
+    {
+      "term": "ソースコード",
+      "description": "人が読み書きできる形で記述したプログラムの内容",
+      "category": "開発",
+      "difficulty": "beginner",
+      "id": "DEV091"
+    },
+    {
+      "term": "プログラミング言語",
+      "description": "コンピューターに処理をさせるための命令を書く約束事",
+      "category": "開発",
+      "difficulty": "beginner",
+      "id": "DEV092"
+    },
+    {
+      "term": "開発環境",
+      "description": "プログラムを作ったり動かしたりするために準備した道具や設定",
+      "category": "開発",
+      "difficulty": "beginner",
+      "id": "DEV093"
+    },
+    {
+      "term": "本番環境",
+      "description": "実際の利用者がサービスを使うための稼働環境",
+      "category": "運用",
+      "difficulty": "beginner",
+      "id": "DEV094"
+    },
+    {
+      "term": "テスト環境",
+      "description": "本番に影響を与えず、動作確認を行うための環境",
+      "category": "運用",
+      "difficulty": "beginner",
+      "id": "DEV095"
+    },
+    {
+      "term": "ローカル環境",
+      "description": "自分のパソコンの中で動かす開発用の環境",
+      "category": "開発",
+      "difficulty": "beginner",
+      "id": "DEV096"
+    },
+    {
+      "term": "画面",
+      "description": "利用者が情報を見たり操作したりする表示部分",
+      "category": "ウェブ",
+      "difficulty": "beginner",
+      "id": "DEV097"
+    },
+    {
+      "term": "入力フォーム",
+      "description": "名前や住所など、利用者が情報を書き込む画面上の欄",
+      "category": "ウェブ",
+      "difficulty": "beginner",
+      "id": "DEV098"
+    },
+    {
+      "term": "ボタン",
+      "description": "押すことで登録や移動などの操作を実行する画面上の部品",
+      "category": "ウェブ",
+      "difficulty": "beginner",
+      "id": "DEV099"
+    },
+    {
+      "term": "リンク",
+      "description": "押すと別のページや場所へ移動できる仕組み",
+      "category": "ウェブ",
+      "difficulty": "beginner",
+      "id": "DEV100"
+    },
+    {
+      "term": "ログイン",
+      "description": "利用者が自分のアカウントでサービスに入ること",
+      "category": "認証",
+      "difficulty": "beginner",
+      "id": "DEV101"
+    },
+    {
+      "term": "ログアウト",
+      "description": "利用中のアカウントから退出すること",
+      "category": "認証",
+      "difficulty": "beginner",
+      "id": "DEV102"
+    },
+    {
+      "term": "パスワード",
+      "description": "本人であることを確かめるために使う秘密の文字列",
+      "category": "認証",
+      "difficulty": "beginner",
+      "id": "DEV103"
+    },
+    {
+      "term": "ユーザー",
+      "description": "サービスやシステムを利用する人やアカウント",
+      "category": "認証",
+      "difficulty": "beginner",
+      "id": "DEV104"
+    },
+    {
+      "term": "管理者",
+      "description": "利用者や設定などを管理する権限を持つ人",
+      "category": "認証",
+      "difficulty": "beginner",
+      "id": "DEV105"
+    },
+    {
+      "term": "権限",
+      "description": "利用者ごとに許可されている操作の範囲",
+      "category": "認証",
+      "difficulty": "beginner",
+      "id": "DEV106"
+    },
+    {
+      "term": "登録",
+      "description": "新しい情報をシステムに追加すること",
+      "category": "データ",
+      "difficulty": "beginner",
+      "id": "DEV107"
+    },
+    {
+      "term": "更新",
+      "description": "すでに登録されている情報を書き換えること",
+      "category": "データ",
+      "difficulty": "beginner",
+      "id": "DEV108"
+    },
+    {
+      "term": "削除",
+      "description": "不要になった情報を取り除くこと",
+      "category": "データ",
+      "difficulty": "beginner",
+      "id": "DEV109"
+    },
+    {
+      "term": "検索",
+      "description": "条件に合う情報を探し出すこと",
+      "category": "データ",
+      "difficulty": "beginner",
+      "id": "DEV110"
+    },
+    {
+      "term": "一覧",
+      "description": "複数の情報を並べて表示したもの",
+      "category": "データ",
+      "difficulty": "beginner",
+      "id": "DEV111"
+    },
+    {
+      "term": "並び替え",
+      "description": "情報を名前や日付などの順番に並べ直すこと",
+      "category": "データ",
+      "difficulty": "beginner",
+      "id": "DEV112"
+    },
+    {
+      "term": "絞り込み",
+      "description": "多くの情報から条件に合うものだけを表示すること",
+      "category": "データ",
+      "difficulty": "beginner",
+      "id": "DEV113"
+    },
+    {
+      "term": "重複データ",
+      "description": "同じ内容の情報が複数登録されている状態",
+      "category": "データ",
+      "difficulty": "beginner",
+      "id": "DEV114"
+    },
+    {
+      "term": "主キー",
+      "description": "表の中の一つの行を他と区別するための値",
+      "category": "データ",
+      "difficulty": "beginner",
+      "id": "DEV115"
+    },
+    {
+      "term": "外部キー",
+      "description": "別の表にある行と関連付けるために使う値",
+      "category": "データ",
+      "difficulty": "beginner",
+      "id": "DEV116"
+    },
+    {
+      "term": "文字コード",
+      "description": "文字をコンピューターで扱うための番号との対応規則",
+      "category": "データ",
+      "difficulty": "beginner",
+      "id": "DEV117"
+    },
+    {
+      "term": "文字化け",
+      "description": "文字の読み取り方が合わず、意図しない記号などで表示される状態",
+      "category": "データ",
+      "difficulty": "beginner",
+      "id": "DEV118"
+    },
+    {
+      "term": "アップロード",
+      "description": "自分の端末から別の場所へファイルを送ること",
+      "category": "ウェブ",
+      "difficulty": "beginner",
+      "id": "DEV119"
+    },
+    {
+      "term": "ダウンロード",
+      "description": "別の場所にあるファイルを自分の端末へ取り込むこと",
+      "category": "ウェブ",
+      "difficulty": "beginner",
+      "id": "DEV120"
+    },
+    {
+      "term": "メールサーバー",
+      "description": "電子メールの送受信や保管を担当するコンピューター",
+      "category": "基盤",
+      "difficulty": "beginner",
+      "id": "DEV121"
+    },
+    {
+      "term": "ウェブサイト",
+      "description": "インターネット上で複数のページをまとめて公開したもの",
+      "category": "ウェブ",
+      "difficulty": "beginner",
+      "id": "DEV122"
+    },
+    {
+      "term": "アカウント",
+      "description": "サービスを利用する人を識別するための登録情報",
+      "category": "認証",
+      "difficulty": "beginner",
+      "id": "DEV123"
+    },
+    {
+      "term": "通知",
+      "description": "出来事や新しい情報を利用者に知らせること",
+      "category": "開発",
+      "difficulty": "beginner",
+      "id": "DEV124"
+    },
+    {
+      "term": "自動保存",
+      "description": "入力や変更を、操作のたびに自動で記録する仕組み",
+      "category": "開発",
+      "difficulty": "beginner",
+      "id": "DEV125"
+    },
+    {
+      "term": "画面遷移",
+      "description": "ある画面から別の画面へ移動すること",
+      "category": "ウェブ",
+      "difficulty": "beginner",
+      "id": "DEV126"
+    },
+    {
+      "term": "読み込み",
+      "description": "保存場所などから情報を取り出して使える状態にすること",
+      "category": "開発",
+      "difficulty": "beginner",
+      "id": "DEV127"
+    },
+    {
+      "term": "書き込み",
+      "description": "情報を保存場所へ記録すること",
+      "category": "開発",
+      "difficulty": "beginner",
+      "id": "DEV128"
+    },
+    {
+      "term": "容量",
+      "description": "保存できる情報やファイルの大きさの上限",
+      "category": "基盤",
+      "difficulty": "beginner",
+      "id": "DEV129"
+    },
+    {
+      "term": "通信速度",
+      "description": "情報を送ったり受け取ったりする速さ",
+      "category": "基盤",
+      "difficulty": "beginner",
+      "id": "DEV130"
+    },
+    {
+      "term": "オブジェクト指向",
+      "description": "情報と、それに対して行う処理をひとまとまりとして設計する考え方",
+      "category": "設計",
+      "difficulty": "intermediate",
+      "id": "DEV131"
+    },
+    {
+      "term": "クラス",
+      "description": "同じ種類の情報や処理を持つものを作るための設計図",
+      "category": "設計",
+      "difficulty": "intermediate",
+      "id": "DEV132"
+    },
+    {
+      "term": "インスタンス",
+      "description": "設計図をもとに実際に作られた一つ一つのもの",
+      "category": "設計",
+      "difficulty": "intermediate",
+      "id": "DEV133"
+    },
+    {
+      "term": "継承",
+      "description": "既存の設計内容を引き継いで、新しいものを作る仕組み",
+      "category": "設計",
+      "difficulty": "intermediate",
+      "id": "DEV134"
+    },
+    {
+      "term": "例外",
+      "description": "通常の処理の流れでは対応できない問題が発生した状態",
+      "category": "品質",
+      "difficulty": "intermediate",
+      "id": "DEV135"
+    },
+    {
+      "term": "スタックトレース",
+      "description": "エラーが起きるまでに通った処理の呼び出し順を示す情報",
+      "category": "品質",
+      "difficulty": "intermediate",
+      "id": "DEV136"
+    },
+    {
+      "term": "メモリ",
+      "description": "プログラムの実行中に情報を一時的に置いておく場所",
+      "category": "基盤",
+      "difficulty": "intermediate",
+      "id": "DEV137"
+    },
+    {
+      "term": "CPU",
+      "description": "プログラムの命令を読み取り、計算や処理を行う装置",
+      "category": "基盤",
+      "difficulty": "intermediate",
+      "id": "DEV138"
+    },
+    {
+      "term": "スレッド",
+      "description": "一つのプログラムの中で処理を進める実行の流れ",
+      "category": "基盤",
+      "difficulty": "intermediate",
+      "id": "DEV139"
+    },
+    {
+      "term": "プロセス",
+      "description": "実行中のプログラムと、その実行に必要な資源のまとまり",
+      "category": "基盤",
+      "difficulty": "intermediate",
+      "id": "DEV140"
+    },
+    {
+      "term": "排他制御",
+      "description": "複数の処理が同じ情報を同時に変更しないよう調整すること",
+      "category": "品質",
+      "difficulty": "intermediate",
+      "id": "DEV141"
+    },
+    {
+      "term": "正規化",
+      "description": "データの重複や矛盾を減らすよう、表の構造を整理すること",
+      "category": "データ",
+      "difficulty": "intermediate",
+      "id": "DEV142"
+    },
+    {
+      "term": "結合",
+      "description": "複数の表から関連する情報を組み合わせて取り出すこと",
+      "category": "データ",
+      "difficulty": "intermediate",
+      "id": "DEV143"
+    },
+    {
+      "term": "ビュー",
+      "description": "検索結果などを、表のように扱える形で定義したもの",
+      "category": "データ",
+      "difficulty": "intermediate",
+      "id": "DEV144"
+    },
+    {
+      "term": "デッドロック",
+      "description": "複数の処理がお互いの解除待ちになり、先へ進めなくなる状態",
+      "category": "品質",
+      "difficulty": "advanced",
+      "id": "DEV145"
+    },
+    {
+      "term": "競合状態",
+      "description": "処理の実行順によって結果が変わり、正しくない結果になる可能性がある状態",
+      "category": "品質",
+      "difficulty": "advanced",
+      "id": "DEV146"
+    },
+    {
+      "term": "正規化理論",
+      "description": "情報の依存関係を整理し、データの矛盾や更新異常を防ぐための理論",
+      "category": "データ",
+      "difficulty": "advanced",
+      "id": "DEV147"
+    },
+    {
+      "term": "分散トランザクション",
+      "description": "複数のデータ保存先にまたがる一連の処理を整合させる仕組み",
+      "category": "データ",
+      "difficulty": "advanced",
+      "id": "DEV148"
+    },
+    {
+      "term": "レプリケーション",
+      "description": "データを別の機器や場所にも複製し、同じ状態を保つ仕組み",
+      "category": "基盤",
+      "difficulty": "advanced",
+      "id": "DEV149"
+    },
+    {
+      "term": "シャーディング",
+      "description": "大量のデータを複数の保存先に分割して管理する方法",
+      "category": "データ",
+      "difficulty": "advanced",
+      "id": "DEV150"
+    }
+  ]
+}
