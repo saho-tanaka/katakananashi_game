@@ -77,7 +77,7 @@
         </div>
         <div id="team-fields" class="team-fields"></div>
         <div class="setup-note"><span class="info-dot">i</span>
-          <p>各ターンはチーム交代制です。説明する人は自分のチーム内で相談して決められます。次に遊ぶチームが判定を担当します。</p>
+          <p>各ターンの回答チームは、説明者と回答者に分かれます。どちらも複数人でOK。次に遊ぶチームが判定を担当します。</p>
         </div>
         <button class="button button-primary button-large full-width" type="submit">ゲームを開始する <span
             aria-hidden="true">→</span></button>
@@ -103,7 +103,7 @@
         <div class="prompt-card-top"><span class="eyebrow">YOUR WORD</span><span id="category-chip"
             class="category-chip">開発</span></div>
         <p class="prompt-term" id="prompt-term">読み込み中</p>
-        <p class="prompt-hint" id="prompt-hint">この言葉を、カタカナ・英語・略語を使わずに説明しよう！</p>
+        <p class="prompt-hint" id="prompt-hint">説明者はカタカナ語・英語・略語を使わずに説明！回答者がお題を当てよう。</p>
       </article>
       <div class="game-controls">
         <div class="timer-block"><span class="eyebrow">REMAINING</span><strong
@@ -131,7 +131,7 @@
           <kbd>←<small>正解</small></kbd><kbd>↓<small>違反</small></kbd><kbd>→<small>次へ</small></kbd>
         </div>
       </div>
-      <p class="turn-footnote">違反の最終判断は、判定チームの代表者が行います。判定チーム内で相談してください。</p>
+      <p class="turn-footnote">正解・スキップ・違反のボタンは判定チームの代表者が操作します。迷ったら判定チーム内で相談してください。</p>
     </section>
 
     <section id="results-screen" class="screen results-screen" hidden>
@@ -201,22 +201,22 @@
         <h2 id="rules-title" tabindex="-1">ゲームのルール</h2>
         <div class="rules-section">
           <h3><span>01</span>ゲームの目的</h3>
-          <p>出題者は、画面に表示された開発用語を、カタカナ語・英語・略語を使わずに説明します。判定チームは、説明を聞いてお題を当てます。</p>
+          <p>回答チームは「説明者」と「回答者」に分かれます。説明者は画面に表示されたお題（開発用語）を、カタカナ語・英語・略語を使わずに説明し、回答者がそのお題を当てます。</p>
         </div>
         <div class="rules-section">
           <h3><span>02</span>チームと順番</h3>
           <ul>
             <li>チームが交代しながら、制限時間内にできるだけ多くのお題に挑戦します。</li>
-            <li>説明する人は、そのターンのチーム内で自由に選べます。複数人で説明しても構いません。</li>
+            <li>説明者・回答者はどちらも複数人で構いません。人数配分は自由です。説明者同士で相談したり、途中で説明を引き継いだりしてもOKです。</li>
             <li>判定は次に遊ぶチームが担当します。違反の最終判断は判定チームの代表者が行います。</li>
           </ul>
         </div>
         <div class="rules-section">
           <h3><span>03</span>判定方法</h3>
           <ul>
-            <li><strong>正解：</strong>お題を当てたら、出題チームに1点。次のお題へ進みます。</li>
-            <li><strong>スキップ：</strong>分からない場合は次のお題へ進めます。回数制限・減点はありません。</li>
-            <li><strong>違反：</strong>外来語・英語・略語を使った場合、そのお題は失格で0点です。減点はありません。</li>
+            <li><strong>正解：</strong>回答者がお題を当てた場合。回答チームに1点が入り、次のお題へ進みます。</li>
+            <li><strong>スキップ：</strong>説明者が説明できないと判断し、「スキップ」と宣言した場合。0点で次のお題へ進みます。回数制限・減点はありません。</li>
+            <li><strong>違反：</strong>説明者がカタカナ語・英語・略語を使った場合。そのお題は失格で0点です。減点はありません。</li>
           </ul>
         </div>
         <div class="rules-section">
@@ -238,7 +238,7 @@
         <div class="rules-section">
           <h3><span>06</span>操作方法</h3>
           <ul>
-            <li>正解・スキップ・違反の判定は、説明者側の操作担当が行います。</li>
+            <li>正解・スキップ・違反の判定ボタンは、判定チームの代表者が操作します。</li>
             <li>PCでは矢印キーでも操作できます。左：正解、右：スキップ、下：違反、上：一時停止。</li>
             <li>一時停止中はお題を隠し、再開ボタンで残り時間から再開します。</li>
           </ul>
